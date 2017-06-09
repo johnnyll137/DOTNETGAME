@@ -14,3 +14,11 @@
 /Users/rgvdmin/Documents/fridgeGame/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.AssemblyInfo.cs
 /Users/rgvdmin/Documents/fridgeGame/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.dll
 /Users/rgvdmin/Documents/fridgeGame/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.pdb
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/bin/Debug/netcoreapp1.1/Game.deps.json
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/bin/Debug/netcoreapp1.1/Game.runtimeconfig.json
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/bin/Debug/netcoreapp1.1/Game.runtimeconfig.dev.json
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/bin/Debug/netcoreapp1.1/Game.dll
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/bin/Debug/netcoreapp1.1/Game.pdb
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.AssemblyInfo.cs
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.dll
+/Users/Johnny/Desktop/SACA Interm/Game/DOTNETGAME/obj/Debug/netcoreapp1.1/Game.pdb
