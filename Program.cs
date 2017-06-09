@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Game
 {
@@ -22,8 +23,9 @@ namespace Game
             hero.lives = 3;
 
             Console.WriteLine("You remember that you only have {0} lives in you.", hero.lives);
-            Console.WriteLine("A wild Patrick Appears");
 
+
+            Console.WriteLine("A wild Patrick Appears");
             alienDraw1();
 
             Console.WriteLine("you look around and see 3 things you can use as a weapon");
@@ -38,18 +40,36 @@ namespace Game
 
             Alien alien1 = new Alien();
             alien1.healthPoints = 1000;
+            alien1.alienName = "Patrick";
             alien1.strenght = new string[1] { "Freeze (make harder)" };
             alien1.weakness = new string[2] { "Torch (it)", "Candle (burn with prayers)" };
 
             Alien alien2 = new Alien();
             alien2.healthPoints = 1000;
+            alien2.alienName = "Anna";
             alien2.strenght = new string[1] { "Whip Cream (on it)" };
             alien2.weakness = new string[2] { "Spoon (her)", "Fork (it)" };
 
             Alien alien3 = new Alien();
             alien3.healthPoints = 1000;
+            alien3.alienName = "Gaga";
             alien3.strenght = new string[1] { "Vodka (martini)" };
             alien3.weakness = new string[2] { "Toothpick (poker face)", "Mouth (smash)" };
+
+
+
+
+//             var stages = new List<Tuple<Alien,Hero>>();
+//             stages.Add(Tuple.Create(alien1,hero));
+//             stages.Add(Tuple.Create(alien2,hero));
+
+//             foreach(var stage in stages)
+//             {
+// Console.WriteLine()stage.Item1.;
+
+//             }
+
+
 
 
 
@@ -90,7 +110,7 @@ namespace Game
                 }
             }
 
-            
+
 
             if (alien1.healthPoints <= 0)
             {
@@ -147,9 +167,11 @@ namespace Game
                 }
             }
 
+
+
             if (alien2.healthPoints <= 0)
             {
-                Console.WriteLine("You gave her mad affection with either spooning or creaming, good job pimp.");
+                Console.WriteLine("You gave her mad affection with either spooning or cream, she is gone.");
             }
             else if (hero.lives <= 0)
             {
