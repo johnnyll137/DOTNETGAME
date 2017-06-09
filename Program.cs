@@ -59,15 +59,17 @@ namespace Game
 
 
 
-//             var stages = new List<Tuple<Alien,Hero>>();
-//             stages.Add(Tuple.Create(alien1,hero));
-//             stages.Add(Tuple.Create(alien2,hero));
+            var stages = new List<Tuple<Alien, Hero, string[,]>>();
+            stages.Add(Tuple.Create(alien1, hero, weapons1));
+            stages.Add(Tuple.Create(alien2, hero, weapons2));
+            stages.Add(Tuple.Create(alien3, hero, weapons3));
 
-//             foreach(var stage in stages)
-//             {
-// Console.WriteLine()stage.Item1.;
+            foreach (var stage in stages)
+            {
 
-//             }
+                //Moved to method stageCompleted
+                stageCompleted(stage);
+            }
 
 
 
@@ -234,6 +236,69 @@ namespace Game
             }
 
 
+        }
+
+        public static bool stageCompleted(Tuple<Alien, Hero, string[,]> stage)
+        {
+
+            //Define your variables
+            var alien1 = stage.Item1;
+            var hero = stage.Item2;
+            var weapons1 = stage.Item3;
+
+            while (alien1.healthPoints > 0 && hero.lives > 0)
+            {
+                Console.WriteLine("Choice A = {0} , or , Choice B {1} , or , Choice C {2}", weapons1[0, 0], weapons1[1, 0], weapons1[2, 0]);
+                string selection = Console.ReadLine();
+                int points = 0;
+                switch (selection)
+                {
+                    case "a":
+                        points = Convert.ToInt32(weapons1[0, 1]);
+                        alien1.healthPoints = alien1.healthPoints - points;
+                        Console.WriteLine("Great job! You have hit the enemy with {0} points!", points);
+                        Console.WriteLine("Remaining Enemy healthPoints {0}", alien1.healthPoints);
+                        //Inline Condition
+                        hero.lives = alien1.healthPoints > 0 ? hero.lives - 1 : hero.lives + 1;
+                        Console.WriteLine("Hero Remaining lives: {0}", hero.lives);
+                        break;
+                    case "b":
+                        points = Convert.ToInt32(weapons1[1, 1]);
+                        alien1.healthPoints = alien1.healthPoints + points;
+                        Console.WriteLine("Great job! You have hit the enemy with {0} points!", points);
+                        Console.WriteLine("Remaining Enemy healthPoints {0}", alien1.healthPoints);
+                        //Inline Condition
+                        hero.lives = alien1.healthPoints > 0 ? hero.lives - 1 : hero.lives;
+                        Console.WriteLine("Hero Remaining lives: {0}", hero.lives);
+                        break;
+                    case "c":
+                        points = Convert.ToInt32(weapons1[1, 1]);
+                        alien1.healthPoints = alien1.healthPoints - points;
+                        Console.WriteLine("Great job! You have hit the enemy with {0} points!", points);
+                        Console.WriteLine("Remaining Enemy healthPoints {0}", alien1.healthPoints);
+                        //Inline Condition
+                        hero.lives = alien1.healthPoints > 0 ? hero.lives - 1 : hero.lives + 1;
+                        Console.WriteLine("Hero Remaining lives: {0}", hero.lives);
+                        break;
+                }
+            }
+
+
+
+            if (alien1.healthPoints <= 0)
+            {
+                Console.WriteLine("You have melted your friend and you left behind a puddle.");
+                Console.WriteLine("You managed to defeat the foe with {0} lives remaining... Good Luck {1}", hero.lives, hero.heroName);
+                return true;
+            }
+            else if (hero.lives <= 0)
+            {
+                Console.WriteLine("You have expended your stay on this earth my friend... goodbye.");
+                return false;
+            }
+
+
+            return false;
         }
 
 
